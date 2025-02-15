@@ -5,12 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "test",
+    "test": "jest",
     "dev": "npx tsx src/toll-calculator/index.tsx"
   },
   "author": "William Magnusson",
   "license": "ISC",
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   }
