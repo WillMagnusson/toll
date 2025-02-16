@@ -9,12 +9,10 @@ import { isTollFreeDate, isTollFreeVehicle } from './freeDates';
  * @returns the fee for the vehicle as a number
  */
 export function getTollFee(vehicle: Vehicle, date: Date): number {
-  console.log('vehicle, date:---------------------', vehicle, date);
   if (isTollFreeDate(date) || isTollFreeVehicle(vehicle)) return 0;
 
   const minutes = date.getMinutes();
   const hour = date.getHours();
-  console.log('hour, minutes:---------------------', hour, minutes);
 
   //outside active hours, no fee
   if (hour < 6) return 0;
