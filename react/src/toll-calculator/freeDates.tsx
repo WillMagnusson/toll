@@ -37,6 +37,10 @@ export function isTollFreeDate(date: Date): boolean {
   return false;
 }
 
+/**
+ * Get a list of strings with holiday dates accoding to riksbanken
+ * @returns a list of strings with holiday dates in a format that can be inputed into a date object
+ */
 export function getTollFreeDates() {
   //toLocaleDateString for local time (CET) to get correct dates. This kind of stuff
   //should be handled by a package like dayjs to make it easier to work with,
