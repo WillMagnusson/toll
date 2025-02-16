@@ -41,6 +41,7 @@ No worries! We accept submissions in other languages as well.
 ## Improvements that can be made in the react (typescript) solution
 
 - UI - the folder is named react because the ambition was to make a react app to present this data, but ran out of time.
+  I didnt want to ruin the commit history so I left the folder name unchanged.
 - Error handling for functions
 - Linting and formatting
 - Documentation and wording for date handling. Sometimes its hard to express
