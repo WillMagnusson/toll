@@ -38,10 +38,11 @@ You can make any modifications or suggestions for what you see fit. Fork this re
 
 No worries! We accept submissions in other languages as well.
 
-## Improvements that can be made in the react solution
+## Improvements that can be made in the react (typescript) solution
 
-- UI
+- UI - the folder is named react because the ambition was to make a react app to present this data, but ran out of time.
 - Error handling for functions
 - Linting and formatting
 - Documentation and wording for date handling. Sometimes its hard to express
   what happens with with dates close to break points, such as 14:59 and 15:00.
+- more test cases
