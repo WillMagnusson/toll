@@ -61,5 +61,5 @@ No worries! We accept submissions in other languages as well.
 
 ## How do i run this?
 
-- In your terminal of choice, cd into the react folder. To run tests for the function implementend, run
+- In your terminal of choice, cd into the react folder. To run tests for the implemented functions, run
   `npm run test`. There is also a `npm run dev` command but this was mostly used during development and is not attached to a dev server.
