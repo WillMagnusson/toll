@@ -1,22 +1,35 @@
-import { TolledVehicles, Vehicle } from '../types';
-import { isTollFreeDate, isTollFreeVehicle } from './freeDates';
-import { getTollFee } from './getTollFee';
+import { TolledVehicles } from '../types';
 
-const MAX_TOLL_FEE = 60 as const;
+import { getTotalTollFee } from './getTotalTollFee';
+export { getTotalTollFee } from './getTotalTollFee';
 
-/**
- * Get the total fee for a vehicle passing multiple tolls
- * @param vehicle the vehicle passing the toll
- * @param dates the date and time of the toll passes
- * @returns the total fee for the vehicle as a number
- */
-export function getTotalTollFee(vehicle: Vehicle, dates: Date[]): number {
-  //todo implmement
-  return 0;
+const res = getTotalTollFee({ type: TolledVehicles.Car }, [
+  new Date('2025-02-17T14:30:00+01:00'),
+  new Date('2025-02-17T14:59:00+01:00'),
+  new Date('2025-02-17T15:15:00+01:00'),
+]);
+console.log('res:---------------------', res);
+const res2 = getTotalTollFee({ type: TolledVehicles.Car }, [
+  new Date('2025-02-17T07:30:00+01:00'),
+  new Date('2025-02-17T15:59:00+01:00'),
+  new Date('2025-02-17T18:15:00+01:00'),
+]);
+console.log('res2:---------------------', res2);
 
-  //loop through dates, call getTollFee for each instance
-  //sum up the fees, if sum goes over 60 exit loop and return 60
-  //else return sum
+const res3 = getTotalTollFee({ type: TolledVehicles.Car }, [
+  new Date('2025-02-17T07:30:00+01:00'),
+  new Date('2025-02-17T10:30:00+01:00'),
+  new Date('2025-02-17T15:59:00+01:00'),
+  new Date('2025-02-17T18:15:00+01:00'),
+]);
+console.log('res3:---------------------', res3);
 
-  //I should probably use reduce for this, seems like a perfekt usecase
-}
+const res4 = getTotalTollFee({ type: TolledVehicles.Car }, [
+  new Date('2025-02-17T10:00:30+01:00'), //8
+  new Date('2025-02-17T12:29:30+01:00'), //8
+  new Date('2025-02-17T13:45:30+01:00'), //8
+  new Date('2025-02-17T14:30:00+01:00'), //8
+  new Date('2025-02-17T14:59:00+01:00'), //8
+  new Date('2025-02-17T15:15:00+01:00'), //13
+]);
+console.log('res4:---------------------', res4);
