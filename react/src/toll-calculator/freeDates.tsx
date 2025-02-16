@@ -1,7 +1,14 @@
-import { DayAsNumber, TollFreeVehicles, Vehicle } from '../types';
+import {
+  DayAsNumber,
+  TolledVehicles,
+  TollFreeVehicles,
+  Vehicle,
+} from '../types';
 import { getHolidays } from '../api';
 
-const TOLL_FREE_DAYS = [DayAsNumber.Sunday, DayAsNumber.Saturday];
+const TOLL_FREE_DAYS = [DayAsNumber.Sunday, DayAsNumber.Saturday] as const;
+const tolledVehicles = new Map(Object.entries(TolledVehicles));
+const tollFreeVehicles = new Map(Object.entries(TollFreeVehicles));
 
 /**
  * Check if a vehicle is toll free
@@ -9,10 +16,10 @@ const TOLL_FREE_DAYS = [DayAsNumber.Sunday, DayAsNumber.Saturday];
  * @returns true if the vehicle is toll free
  */
 export function isTollFreeVehicle(vehicle: Vehicle): boolean {
-  //todo implmement
   if (!vehicle) return false;
 
-  return Object.values(TollFreeVehicles).includes(vehicle.type);
+  if (tolledVehicles.has(vehicle.type)) return false;
+  if (tollFreeVehicles.has(vehicle.type)) return true;
 }
 
 /**
