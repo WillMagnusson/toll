@@ -47,3 +47,13 @@ No worries! We accept submissions in other languages as well.
 - Documentation and wording for date handling. Sometimes its hard to express
   what happens with with dates close to break points, such as 14:59 and 15:00.
 - more test cases
+
+## What would I add if I had more time?
+
+- A react application to present fees, and maybe the possibility of inputing times manually to calulate a toll fee
+  depending on who the app is for. If I assume that the app is for the citys employees, I would choose a framework
+  like remix and focus on building a good client side application. Here I would also add some more functionality
+  to view statistics and handle toll passes, vehicles and dates in bulk.
+- I would add a backend solution serving the fronted app. The backend would handle most of the business logic Ive
+  written in the toll-calculator folder, and I would probably store the data in a document database like dynamoDB
+  with good access keys to easily handle large amount of data for the statistics part of the front end app.
