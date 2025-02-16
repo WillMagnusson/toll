@@ -58,3 +58,8 @@ No worries! We accept submissions in other languages as well.
   written in the toll-calculator folder, and I would probably store the data in a document database like dynamoDB
   with good access keys to easily handle large amount of data for the statistics part of the front end app.
   If using dynamoDB I think puting these function in AWS Lambdas would be a fitting option.
+
+## How do i run this?
+
+- In your terminal of choice, cd into the react folder. To run tests for the function implementend, run
+  `npm run test`. There is also a `npm run dev` command but this was mostly used during development and is not attached to a dev server.
